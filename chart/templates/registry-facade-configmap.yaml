@@ -51,6 +51,10 @@ data:
                 "theia": {
                     "repo": "{{ template "gitpod.comp.imageRepo" (dict "root" . "gp" $.Values "comp" .Values.components.workspace.theiaImage) }}",
                     "workdir": "/theia/node_modules/@gitpod/gitpod-ide/lib"
+                },
+                "supervisor": {
+                    "repo": "{{ template "gitpod.comp.imageRepo" (dict "root" . "gp" $.Values "comp" .Values.components.workspace.supervisorImage) }}",
+                    "workdir": "/web"
                 }
             },
             "blobSpace": {
