@@ -499,7 +499,8 @@ func (m *Manager) createWorkspaceContainer(startContext *startWorkspaceContext) 
 			SuccessThreshold: 1,
 			TimeoutSeconds:   1,
 		},
-		Env: env,
+		Env:     env,
+		Command: []string{"/app/supervisor", "run"},
 	}, nil
 }
 

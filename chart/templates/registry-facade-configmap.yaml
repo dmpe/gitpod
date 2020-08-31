@@ -35,6 +35,10 @@ data:
                 "repo": "{{ template "gitpod.comp.imageRepo" (dict "root" . "gp" $.Values "comp" .Values.components.workspace.theiaImage) }}",
                 "defaultVersion": "{{ .Values.version }}"
             },
+            "staticLayer": {
+                "type": "image",
+                "ref": "{{ template "gitpod.comp.imageRepo" (dict "root" . "gp" $.Values "comp" .Values.components.workspace.supervisorImage) }}:{{ .Values.version }}"
+            },
             "remoteSpecProvider": {
                 "addr": "ws-manager:{{ .Values.components.wsManager.ports.rpc.containerPort }}"
             },
